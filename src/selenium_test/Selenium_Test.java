@@ -99,7 +99,7 @@ public class Selenium_Test {
             found = friendsNameList.size();
             //System.out.println(found);
             //all of the friends are found so start printing
-            if (count == found) {
+            if (count/2 <= found) {
                 for (int i = 0; i < found; i++) {
                     friendsURL.add(friendsListItem.get(i).findElement(By.tagName("a")).getAttribute("href"));
                     WebElement image = friendsListItem.get(i).findElement(By.tagName("img"));
@@ -180,7 +180,7 @@ public class Selenium_Test {
                 friendsOfFriends = driver.findElements(By.xpath("//*[@class='fsl fwb fcb']"));
                 found = friendsOfFriends.size();
 
-                if (count * 0.2 < found - 1) { // after finding 2% of friend export data (for testing)
+                if (count/2< found - 1) { // after finding 2% of friend export data (for testing)
                     exportData(friendsListItem, driver, "friends_of_" + url.substring(25, url.indexOf("?")) + ".csv");
                     break;
                 }
