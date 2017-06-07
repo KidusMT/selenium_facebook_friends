@@ -99,7 +99,7 @@ public class Selenium_Test {
             found = friendsNameList.size();
             //System.out.println(found);
             //all of the friends are found so start printing
-            if (count/2 <= found) {
+            if (count/2 <= found -2) {
                 for (int i = 0; i < found; i++) {
                     friendsURL.add(friendsListItem.get(i).findElement(By.tagName("a")).getAttribute("href"));
                     WebElement image = friendsListItem.get(i).findElement(By.tagName("img"));
